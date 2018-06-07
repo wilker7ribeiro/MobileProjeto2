@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_web_view"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/webview" />
+        <item
+            android:id="@+id/nav_item_contatos"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/lista_contatos" />
+        <item
+            android:id="@+id/nav_item_calculadora"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/calculadora" />
+        <item
+            android:id="@+id/nav_item_me_mostre_no_mapa"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/me_mostre_no_mapa" />
+    </group>
+
+
+</menu>
