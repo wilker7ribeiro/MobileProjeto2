@@ -72,9 +72,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             ActivityCompat.requestPermissions(this, permissoes, REQUEST_CODE_PERMISAO);
             return;
         }
-        // remove os controles do google maps
-        mMap.getUiSettings().setScrollGesturesEnabled(false);
-
+        
         // adiciona o botão de localização atual no google map
         mMap.setMyLocationEnabled(true);
     }
