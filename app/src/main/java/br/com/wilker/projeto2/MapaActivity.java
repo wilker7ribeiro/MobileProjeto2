@@ -46,6 +46,12 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
     }
 
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        onLocalizacaoChangeSubscriber.unsubscribe();
+    }
+
 
 
     @Override

@@ -5,4 +5,15 @@
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="AppTheme.CalculadoraButton">
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.CalculadoraButtonAccent" parent="AppTheme.CalculadoraButton">
+        <item name="android:backgroundTint">@color/colorAccent</item>
+    </style>
 </resources>
