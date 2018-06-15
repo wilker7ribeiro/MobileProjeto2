@@ -31,8 +31,10 @@ public class WebViewFragment extends Fragment{
         botaoIr = fragmentView.findViewById(R.id.web_view_btn_ir);
         urlInput = fragmentView.findViewById(R.id.web_view_ipt_url);
 
+        // configura a webView
         configurarWebView();
 
+        // adiciona o onclick para navegar de acordo com o escrito no input
         botaoIr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,8 +44,11 @@ public class WebViewFragment extends Fragment{
         return fragmentView;
     }
 
+    // configura WebView
     public void configurarWebView(){
+        // abre apágina do google como padrão
         mWebView.loadUrl("https://www.google.com.br/");
+        // configura a webview
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient() {
             @SuppressWarnings("deprecation")

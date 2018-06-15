@@ -16,28 +16,36 @@ import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    // placeholder da página atual
     FrameLayout pageContainer;
+
+    // barra superior
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         toolbar = findViewById(R.id.toolbar);
+        // seta a toolbar na página
         setSupportActionBar(toolbar);
         pageContainer = findViewById(R.id.page_container);
+
+        // prepara o menu lateral
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        // abre o navegador como padrão
         openWebViewFragment();
     }
 
+    // trata o botão de voltar para fechar o menu lateral caso ele estiver aberto
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -50,20 +58,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // prepara os itens da barra superior
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 
-
+    // Verifica o item clicado e abre a respectiva view
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_item_web_view) {
             openWebViewFragment();
@@ -79,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    // Substitui o placeholder por um novo fragmento
     protected void replaceFragment(Fragment novoFragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.page_container, novoFragment);
@@ -87,22 +91,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.commit();
     }
 
+    // Abre o fragmento do navegador
     protected void openWebViewFragment() {
         toolbar.setTitle(getResources().getString(R.string.webview));
         Fragment webViewFragment = new WebViewFragment();
         replaceFragment(webViewFragment);
     }
 
+    // Abre a activity de mapa
     protected void openMapaActivity() {
         startActivity(new Intent(this, MapaActivity.class));
     }
 
+    // Abre o fragmento de contatos
     protected void openContatosFragment() {
         toolbar.setTitle(getResources().getString(R.string.lista_contatos));
         Fragment contatosFragment = new ContatosFragment();
         replaceFragment(contatosFragment);
     }
 
+    // Abre o fragmento da calculadora
     protected void openCalculadoraFragment() {
         toolbar.setTitle(getResources().getString(R.string.calculadora));
         Fragment calculadoraFragment = new CalculadoraFragment();

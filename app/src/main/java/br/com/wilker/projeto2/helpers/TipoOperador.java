@@ -1,9 +1,9 @@
 package br.com.wilker.projeto2.helpers;
 
 /**
+ * Enum de tipo de Operador utilizado na calculadora
  * Created by Wilker on 15/06/2018.
  */
-
 public enum TipoOperador implements Operador {
     ADICAO("+") {
         @Override
@@ -35,12 +35,13 @@ public enum TipoOperador implements Operador {
             return (b * a) / 100;
         }
     };
-    private final String operador;
 
+    private final String operador;
     TipoOperador(final String operador) {
         this.operador = operador;
     }
 
+    // retorna a instancia do enum de acordo com o operador
     public static TipoOperador getByOperador(String operador) {
         for (TipoOperador tipoOperador : TipoOperador.values()) {
             if (tipoOperador.operador.equalsIgnoreCase(operador)) {
