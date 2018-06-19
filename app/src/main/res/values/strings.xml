@@ -9,4 +9,5 @@
     <string name="lista_contatos">Lista de contatos</string>
     <string name="calculadora">Calculadora</string>
     <string name="voce_esta_aqui">Você está aqui!</string>
+    <string name="title_activity_contatos">ContatosActivity</string>
 </resources>
