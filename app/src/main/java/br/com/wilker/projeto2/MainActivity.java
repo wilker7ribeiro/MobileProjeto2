@@ -14,6 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import br.com.wilker.projeto2.activities.ContatosActivity;
+import br.com.wilker.projeto2.activities.MapaActivity;
+import br.com.wilker.projeto2.fragments.CalculadoraFragment;
+import br.com.wilker.projeto2.R;
+import br.com.wilker.projeto2.fragments.WebViewFragment;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     // placeholder da página atual
@@ -71,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_item_web_view) {
             openWebViewFragment();
         } else if (id == R.id.nav_item_contatos) {
-            openContatosFragment();
+            openContatosActivity();
         } else if (id == R.id.nav_item_calculadora) {
             openCalculadoraFragment();
         } else if (id == R.id.nav_item_me_mostre_no_mapa) {
@@ -104,10 +110,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // Abre o fragmento de contatos
-    protected void openContatosFragment() {
-        toolbar.setTitle(getResources().getString(R.string.lista_contatos));
-        Fragment contatosFragment = new ContatosFragment();
-        replaceFragment(contatosFragment);
+    protected void openContatosActivity() {
+        startActivity(new Intent(this, ContatosActivity.class));
+//        toolbar.setTitle(getResources().getString(R.string.lista_contatos));
     }
 
     // Abre o fragmento da calculadora
