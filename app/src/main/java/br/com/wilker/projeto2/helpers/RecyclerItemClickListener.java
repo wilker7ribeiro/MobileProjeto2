@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 
 /**
  * RecyclerView não possui o método OnItemClickListener para identificar o clique do item.
- * Para isso é necessário esta classe que extende RecyclerView.OnItemTouchListener .
+ * Para isso é necessário esta classe que extende RecyclerView.OnItemTouchListener
  */
 public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
 

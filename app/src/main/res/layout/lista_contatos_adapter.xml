@@ -8,6 +8,8 @@
         android:id="@+id/textContato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:text="Vinícius Regis"
-        android:textSize="18sp" />
+        android:textSize="26sp" />
 </LinearLayout>

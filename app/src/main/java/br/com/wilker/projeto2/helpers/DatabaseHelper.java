@@ -16,10 +16,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     }
 
     @Override
+    // Cria o banco e a tabela de contatos (executado somente uma vez)
     public void onCreate(SQLiteDatabase db) {
         String sqlTableContato = "CREATE TABLE IF NOT EXISTS " + TB_CONTATO
                     + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "+
                     " nome VARCHAR(255) NOT NULL, "+
+                    " email VARCHAR(255), "+
                     " telefone VARCHAR(255) NOT NULL ); ";
 
         try {
